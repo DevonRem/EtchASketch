@@ -13,7 +13,27 @@ function createGrid(num) {
     }
 }
 
+function buttonclick() {
+    let userSelection = prompt("Please enter a new grid size less than 100");
+    if (userSelection > 100 || userSelection < 0) {
+        alert("ERROR!");
+    }
+    else {
+        const rowsToDelete = document.querySelectorAll('.row');
+        const colsToDelete = document.querySelectorAll('.col');
+        console.log(colsToDelete);
+        console.log(rowsToDelete); 
+        for (let j=0; j < colsToDelete.length; j++) {
+            colsToDelete[j].remove();
+        }
+        for (let i=0; i < rowsToDelete.length; i++) {
+            rowsToDelete[i].remove();
+        }
 
+        //creates new grid
+        createGrid(userSelection);
+    }
+}
 
 createGrid(16);
 container.addEventListener('mouseover', function(e) {
