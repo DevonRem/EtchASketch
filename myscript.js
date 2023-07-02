@@ -1,7 +1,5 @@
 const container = document.querySelector('.container');
 
-//probably turn this into a function later: createGrid()
-
 function createGrid(num) {
     for (let rows = 0; rows < num; rows++) {
         const row = document.createElement('div');
@@ -15,4 +13,19 @@ function createGrid(num) {
     }
 }
 
+
+
 createGrid(16);
+container.addEventListener('mouseover', function(e) {
+    e.target.style.background = 'grey';
+});
+
+container.addEventListener('mouseout', function(e) {
+    if (e.target.style.background !== 'black') {
+    e.target.style.background = 'white';
+    }
+});
+
+container.addEventListener('click', function(e) {
+    e.target.style.background = 'black';
+});
